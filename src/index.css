@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 4%;
+    --foreground: 220 10% 98%;
+    
+    --card: 220 20% 6%;
+    --card-foreground: 220 10% 98%;
+    
+    --popover: 220 20% 6%;
+    --popover-foreground: 220 10% 98%;
+    
+    --primary: 142 70% 45%;
+    --primary-foreground: 144 70% 10%;
+    
+    --secondary: 220 20% 12%;
+    --secondary-foreground: 220 10% 98%;
+    
+    --muted: 220 20% 12%;
+    --muted-foreground: 220 10% 70%;
+    
+    --accent: 142 70% 45%;
+    --accent-foreground: 144 70% 10%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 220 20% 20%;
+    --input: 220 20% 16%;
+    --ring: 142 70% 45%;
+
+    --radius: 0px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-mono;
+  }
+  
+  .terminal-effect {
+    text-shadow: 0 0 5px hsl(var(--primary));
+  }
+  
+  .scan-line {
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(32, 128, 32, 0.2) 50%,
+      transparent 100%
+    );
+    animation: scanline 10s linear infinite;
+  }
+  
+  @keyframes scanline {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+}
